@@ -61,10 +61,11 @@ app.post("/quotes", (req, res) => {
 
 /**
  * GET /hello
- * Returns a simple hello message.
+ * Returns a simple hello message with optional ?name= query param.
  */
 app.get("/hello", (req, res) => {
-  res.json({ message: "Hello, World! 👋" });
+  const name = req.query.name ? req.query.name.trim() : "World";
+  res.json({ message: `Hello, ${name}! 👋` });
 });
 
 // ── 404 Catch-all ───────────────────────────────────────────────────────────

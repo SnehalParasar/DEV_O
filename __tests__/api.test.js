@@ -105,6 +105,12 @@ describe("Quote Generator API", () => {
       expect(res.body).toHaveProperty("message");
       expect(res.body.message).toMatch(/hello/i);
     });
+
+    it("should greet by name when ?name= is passed", async () => {
+      const res = await request(app).get("/hello?name=Alice");
+      expect(res.statusCode).toBe(200);
+      expect(res.body.message).toMatch(/Alice/);
+    });
   });
 
   // ── 404 ──────────────────────────────────────────────────────────────────
