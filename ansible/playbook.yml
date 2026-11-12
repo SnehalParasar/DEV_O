@@ -1,0 +1,5 @@
+- hosts: local_host
+  connection: local
+  gather_facts: yes
+  roles:
+    - node_app_setup

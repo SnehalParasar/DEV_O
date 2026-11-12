@@ -1,0 +1,9 @@
+- name: Ensure app directory exists
+  file:
+    path: /tmp/node_app
+    state: directory
+
+- name: Display runtime configuration info
+  debug:
+    msg: "Node application configured successfully with port {{ app_port }}"
+  notify: Restart app service

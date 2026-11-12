@@ -1,0 +1,3 @@
+- name: Restart app service
+  debug:
+    msg: 'Restarting Node.js application service on port {{ app_port }}'
